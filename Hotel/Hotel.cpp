@@ -1,8 +1,11 @@
 #include "Hotel.h"
 #include <vector>
+#include <iostream>
 
-Hotel::Hotel(std::string ID, std::string nom, std::string ville, std::vector <int> chambre) : _ID(ID), _nom(nom),  _ville(ville), _chambre(chambre)
+Hotel::Hotel(std::string ID, std::string nom, std::string ville) : _ID(ID), _nom(nom),  _ville(ville)
 {
+	_nbChambre = 25;
+
 }
 
 std::string Hotel::ID() const
@@ -20,10 +23,25 @@ std::string Hotel::ville() const
 	return _ville;
 }
 
-std::ostream& operator<<(std::ostream& os, const Hotel& chambre)
+void Hotel::tab(std::vector<int> _numChambre) 
 {
-	for (const Hotel chambre : ) {
-		os << chambre;
+	for (int i = 0; i < _nbChambre; ++i) {
+
+		_numChambre.push_back(i);
 	}
-	return os;
 }
+
+void Hotel::afficherCh() const
+{
+	std::cout << "Nombre de chambre: " << _nbChambre << std::endl;
+
+	std::cout << "Les chambres ci-dessous sont dispo: " << _nbChambre << std::endl;
+
+	for (int i = 0; i < _nbChambre; ++i) {
+
+		std::cout<<"N°: " << _numChambre[i] << std::endl;
+	}
+
+}
+
+
