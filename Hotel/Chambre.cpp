@@ -15,6 +15,7 @@ int Chambre::prix() const {
 
 void Chambre::updatePrix()
 {
+	std::cout << "Entrez un nouveau prix: " << std::endl;
 	std::cin >> _prix;
 
 }
